@@ -5,7 +5,8 @@
 #include <input/processors.dtsi> // マウスカーソル動作をスクロール動作に変換
 #include <behaviors/rgbled_widget.dtsi>  // led制御
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100   //スクロール量
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
 #define DEFAULT 0
 #define QWERTY 1
@@ -20,6 +21,13 @@
     tapping-term-ms = <400>;
     quick-tap-ms = <0>;
 };
+
+&ball_listener {
+    scroll {
+        layers = <2>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+}
 
 / {
 
@@ -46,12 +54,28 @@
             timeout-ms = 80;
         };
 
-        qwerty_ {
-            bindings = <&kp DOUBLE_QUOTES>;
-            key-positions = <20 21>;
+        qwerty_on_off {
+            bindings = <&tog 1>;
+            key-positions = <4 5>;
             timeout-ms = 80;
+            layers = <0 1>;
         };
 
+        system_on_off {
+            bindings = <&mo 6>;
+            key-positions = <30 31 32>;
+            timeout-ms = 80;
+        };
+    };
+
+    behaviors {
+        ctrl_tog: behavior_ctrl_tog {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&kp>, <&tog>;
+        };
     };
 
     keymap {
@@ -59,19 +83,19 @@
 
         DFAULT {
             bindings = <
-            &kp Q    &kp L    &kp U    &kp COMMA           &kp PERIOD                                       &kp F        &kp W             &kp R    &kp Y    &kp P
-            &kp E    &kp I    &kp A    &kp O                                              &kp SEMICOLON     &kp K        &kp T             &kp N    &kp S    &kp H
-            &kp Z    &kp X    &kp C    &kp V                                              &kp SLASH         &kp G        &kp D             &kp M    &kp J    &kp B
-                                       &mt LSHIFT SPACE    &lt 2 F15     &kp LCTRL        &mt RALT MINUS    &lt 3 F14    &mt RGUI ENTER
+            &kp Q    &kp L    &kp U    &kp COMMA           &kp PERIOD                                               &kp F        &kp W             &kp R    &kp Y    &kp P
+            &kp E    &kp I    &kp A    &kp O                                                      &kp SEMICOLON     &kp K        &kp T             &kp N    &kp S    &kp H
+            &kp Z    &kp X    &kp C    &kp V                                                      &kp SLASH         &kp G        &kp D             &kp M    &kp J    &kp B
+                                       &mt LSHIFT SPACE    &lt 2 F15     &ctrl_tog LCTRL 5        &mt LALT MINUS    &lt 3 F14    &mt LGUI ENTER
             >;
         };
 
         QWERTY {
             bindings = <
-            &kp Q    &kp W    &kp E    &kp R               &kp T                                           &kp Y        &kp U             &kp I        &kp O         &kp P
-            &kp A    &kp S    &kp D    &kp F                                             &kp G             &kp H        &kp J             &kp K        &kp L         &kp SEMICOLON
-            &kp Z    &kp X    &kp C    &kp V                                             &kp B             &kp N        &kp M             &kp COMMA    &kp PERIOD    &kp SLASH
-                                       &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &mt RALT MINUS    &lt 3 F14    &mt RGUI ENTER
+            &kp Q    &kp W    &kp E    &kp R               &kp T                                                   &kp Y        &kp U             &kp I        &kp O         &kp P
+            &kp A    &kp S    &kp D    &kp F                                                     &kp G             &kp H        &kp J             &kp K        &kp L         &kp SEMICOLON
+            &kp Z    &kp X    &kp C    &kp V                                                     &kp B             &kp N        &kp M             &kp COMMA    &kp PERIOD    &kp SLASH
+                                       &mt LSHIFT SPACE    &lt 2 F15    &ctrl_tog LCTRL 5        &mt LALT MINUS    &lt 3 F14    &mt LGUI ENTER
             >;
         };
 
@@ -80,44 +104,44 @@
             &kp PG_UP           &kp HOME     &kp UP       &kp END             &kp LC(Y)                                             &kp EQUAL          &kp N7    &kp N8    &kp N9    &kp COMMA
             &kp PG_DN           &kp LEFT     &kp DOWN     &kp RIGHT                                         &kp KP_PLUS             &kp BSPC           &kp N4    &kp N5    &kp N6    &kp PERIOD
             &mt LSHIFT LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)                                         &kp KP_MINUS            &kp DEL            &kp N1    &kp N2    &kp N3    &kp N0
-                                                          &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &mt RALT KP_MULTIPLY    &lt 3 KP_DIVIDE    &mt RGUI ENTER
+                                                          &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &mt LALT KP_MULTIPLY    &lt 3 KP_DIVIDE    &mt LGUI ENTER
             >;
         };
 
         SYMBOL {
             bindings = <
-            &kp EXCL           &kp AT      &kp HASH    &kp DLLR            &kp PRCNT                                        &kp CARET    &kp AMPS            &kp ASTRK            &kp LPAR         &kp RPAR
-            &kp PAUSE_BREAK    &kp SLCK    &PSCRN      &kp INS                                            &kp EQUAL         &kp BSPC     &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp SEMICOLON    &kp SINGLE_QUOTE
-            &trans             &trans      &trans      &trans                                             &kp MINUS         &kp DEL      &kp GRAVE           &kp K_APP            &kp BACKSLASH    &kp SLASH
-                                                       &mt LSHIFT SPACE    &lt 2 F15     &kp LCTRL        &mt RALT MINUS    &lt 3 F14    &mt RGUI ENTER
+            &kp EXCL           &kp AT      &kp HASH     &kp DLLR            &kp PRCNT                                        &kp CARET    &kp AMPS            &kp ASTRK            &kp LPAR         &kp RPAR
+            &kp PAUSE_BREAK    &kp SLCK    &kp PSCRN    &kp INS                                            &kp EQUAL         &kp BSPC     &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp SEMICOLON    &kp SINGLE_QUOTE
+            &trans             &trans      &trans       &trans                                             &kp MINUS         &kp DEL      &kp GRAVE           &kp K_APP            &kp BACKSLASH    &kp SLASH
+                                                        &mt LSHIFT SPACE    &lt 2 F15     &kp LCTRL        &mt LALT MINUS    &lt 3 F14    &mt LGUI ENTER
             >;
         };
 
         FUNCTION {
             bindings = <
-            &kp LC(PG_UP)       &kp LC(HOME)    &kp LC(UP)      &kp LC(END)         &kp LC(Y)                                       &kp C_MUTE          &kp F1    &kp F2    &kp F3    &kp F4
-            &kp LC(PG_DN)       &kp LC(LEFT)    &kp LC(DOWN)    &kp LC(RIGHT)                            &kp C_VOL_UP             &kp BSPC           &kp F5    &kp F6    &kp F7    &kp F8
-            &mt LSHIFT LC(Z)    &kp LC(X)       &kp LC(C)       &kp LC(V)                            &kp C_VOL_DN            &kp DEL            &kp F9    &kp F10    &kp F11    &kp F12
-                                                                &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &mt RALT MINUS    &lt 3 F14    &mt RGUI ENTER
+            &kp LC(PG_UP)       &kp LC(HOME)    &kp LC(UP)      &kp LC(END)         &kp LC(Y)                                       &kp C_MUTE      &kp F1            &kp F2     &kp F3     &kp F4
+            &kp LC(PG_DN)       &kp LC(LEFT)    &kp LC(DOWN)    &kp LC(RIGHT)                                     &kp C_VOL_UP      &kp LC(BSPC)    &kp F5            &kp F6     &kp F7     &kp F8
+            &mt LSHIFT LC(Z)    &kp LC(X)       &kp LC(C)       &kp LC(V)                                         &kp C_VOL_DN      &kp LC(DEL)     &kp F9            &kp F10    &kp F11    &kp F12
+                                                                &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &mt LALT MINUS    &lt 3 F14       &mt LGUI ENTER
             >;
 
         };
 
         MOUSE {
             bindings = <
-            &trans  &trans        &trans        &trans        &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-            &trans  &trans        &trans        &trans        &trans  &trans                 &trans        &trans        &trans        &trans        &trans
-            &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-            &trans                                            &trans  &trans    &trans       &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+            &kp LA(DOWN)     &kp LA(UP)       &kp LC(W)           &kp LC(T)        &kp LC(R)                                  &trans       &trans            &trans    &trans    &trans
+            &kp LA(LEFT)     &kp LA(RIGHT)    &kp LC(PG_UP)       &kp LC(PG_DN)                             &trans            &trans       &trans            &trans    &trans    &trans
+            &kp LS(LC(T))    &mkp MB1         &mkp MB3            &mkp MB2                                  &trans            &trans       &trans            &trans    &trans    &trans
+                                              &mt LSHIFT SPACE    &mo 2            &ctrl_tog LCTRL 5        &mt LALT MINUS    &lt 3 F14    &mt LGUI ENTER
             >;
         };
 
         SYSTEM {
             bindings = <
-            &trans  &trans        &trans        &trans        &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-            &trans  &trans        &trans        &trans        &trans  &trans                 &trans        &trans        &trans        &trans        &trans
-            &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-            &trans                                            &trans  &trans    &trans       &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+            &trans    &trans    &trans    &trans              &trans                                                  &bt BT_SEL 0    &bt BT_SEL 1      &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
+            &trans    &trans    &trans    &trans                                                    &bootloader       &trans          &trans            &trans          &trans          &trans
+            &trans    &trans    &trans    &trans                                                    &trans            &trans          &trans            &trans          &bt BT_CLR      &bt BT_CLR_ALL
+                                          &mt LSHIFT SPACE    &lt 2 F15    &ctrl_tog LCTRL 5        &mt LALT MINUS    &lt 3 F14       &mt LGUI ENTER
             >;
         };
     };
