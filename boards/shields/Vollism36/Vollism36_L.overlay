@@ -10,7 +10,7 @@
 };
 
 / {
-    trackball_listener {
+    ball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };
