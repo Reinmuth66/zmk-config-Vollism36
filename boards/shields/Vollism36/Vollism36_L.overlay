@@ -57,7 +57,3 @@
         scroll-layers = <1>;
     };
 };
-
-&trackball_listener {
-    
-}
