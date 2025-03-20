@@ -1,4 +1,5 @@
 #include "Vollism36.dtsi"
+#include <input/processors.dtsi>
 
 &kscan0 {
         col-gpios
@@ -52,3 +53,10 @@
         scroll-layers = <1>;
     };
 };
+
+&trackball_listener {
+    scroll {
+        layers = <2>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+}
