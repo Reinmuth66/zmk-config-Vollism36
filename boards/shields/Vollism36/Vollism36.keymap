@@ -22,13 +22,6 @@
     quick-tap-ms = <0>;
 };
 
-&trackball_listener {
-    scroll {
-        layers = <2>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
-    };
-}
-
 / {
 
     conditional_layers {
