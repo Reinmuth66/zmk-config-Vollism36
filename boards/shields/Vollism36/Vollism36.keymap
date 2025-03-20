@@ -22,7 +22,7 @@
     quick-tap-ms = <0>;
 };
 
-&ball_listener {
+&trackball_listener {
     scroll {
         layers = <2>;
         input-processors = <&zip_xy_to_scroll_mapper>;
