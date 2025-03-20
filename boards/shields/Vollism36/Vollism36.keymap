@@ -37,26 +37,26 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
-            timeout-ms = 80;
+            timeout-ms = <80>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <1 3>;
-            timeout-ms = 80;
+            timeout-ms = <80>;
         };
 
         qwerty_on_off {
             bindings = <&tog 1>;
             key-positions = <4 5>;
-            timeout-ms = 80;
+            timeout-ms = <80>;
             layers = <0 1>;
         };
 
         system_on_off {
             bindings = <&mo 6>;
             key-positions = <30 31 32>;
-            timeout-ms = 80;
+            timeout-ms = <80>;
         };
     };
 
