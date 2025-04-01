@@ -1,5 +1,6 @@
 #include "Vollism36.dtsi"
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &kscan0 {
         col-gpios
@@ -18,6 +19,14 @@
                 layers = <2>;
                 input-processors = <&zip_xy_to_scroll_mapper>;
         };
+    };
+};
+
+/ {
+    glidepoint_listener {
+        compatible = "zmk,input-listener";
+        device = <&glidepoint>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
 };
 
