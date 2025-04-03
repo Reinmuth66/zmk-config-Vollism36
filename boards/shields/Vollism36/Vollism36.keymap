@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/rgbled_widget.dtsi>  // led制御
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 6000
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 1000
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 1
 
 #define DEFAULT 0
 #define QWERTY 1
