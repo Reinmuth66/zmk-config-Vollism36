@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/rgbled_widget.dtsi>  // led制御
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 60
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
 #define DEFAULT 0
 #define QWERTY 1
@@ -64,7 +64,7 @@
         mouse_ctrl: behavior_mouse_ctrl {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <500>;
             bindings = <&kp LCTRL>, <&mo 5>;
         };
     };
