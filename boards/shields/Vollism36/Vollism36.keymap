@@ -92,8 +92,8 @@
 
         ARROW_NUM {
             bindings = <
-            &kp PG_UP           &kp HOME     &kp UP       &kp END             &kp LC(Y)                                               &kp EQUAL          &kp N7    &kp N8    &kp N9    &kp COMMA
-            &kp PG_DN           &kp LEFT     &kp DOWN     &kp RIGHT                                           &kp KP_PLUS             &kp BSPC           &kp N4    &kp N5    &kp N6    &kp PERIOD
+            &kp PG_UP           &kp HOME     &mmv MOVE_UP       &kp END             &kp LC(Y)                                               &kp EQUAL          &kp N7    &kp N8    &kp N9    &kp COMMA
+            &kp PG_DN           &mmv MOVE_LEFT     &mmv MOVE_DOWN     &mmv MOVE_RIGHT                                           &kp KP_PLUS             &kp BSPC           &kp N4    &kp N5    &kp N6    &kp PERIOD
             &mt LSHIFT LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)                                           &kp KP_MINUS            &kp DEL            &kp N1    &kp N2    &kp N3    &kp N0
                                                           &mt LSHIFT SPACE    &lt 2 F15    &mouse_ctrl        &mt LALT KP_MULTIPLY    &lt 3 KP_DIVIDE    &mt LGUI ENTER
             >;
