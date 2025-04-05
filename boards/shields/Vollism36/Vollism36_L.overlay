@@ -1,6 +1,4 @@
 #include "Vollism36.dtsi"
-#include <input/processors.dtsi>
-#include <dt-bindings/zmk/input_transform.h>
 
 &kscan0 {
         col-gpios
