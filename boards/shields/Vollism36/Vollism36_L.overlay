@@ -1,5 +1,7 @@
 #include "Vollism36.dtsi"
 #include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
 
 &kscan0 {
         col-gpios
@@ -8,6 +10,15 @@
             , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
             , <&xiao_d 7 GPIO_ACTIVE_HIGH>
             ;
+};
+
+/ {
+    /omit-if-no-ref/ zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <1400>;
+        excluded-positions = <31>;
+    };
 };
 
 / {
