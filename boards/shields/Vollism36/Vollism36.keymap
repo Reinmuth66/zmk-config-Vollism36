@@ -61,12 +61,205 @@
     };
 
     behaviors {
+        l_w: modifiers_l_qwerty_w {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp L>, <&kp W>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        u_e: modifiers_u_qwerty_e {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp U>, <&kp E>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        comma_r: modifiers_comma_qwerty_r {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp R>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        period_t: modifiers_period_qwerty_t {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp T>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        f_y: modifiers_f_qwerty_y {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp F>, <&kp Y>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        w_u: modifiers_w_qwerty_u {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp W>, <&kp U>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+         r_i: modifiers_r_qwerty_i {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp R>, <&kp I>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        y_o: modifiers_y_qwerty_o {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp Y>, <&kp O>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        e_a: modifiers_e_qwerty_a {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp E>, <&kp A>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        i_s: modifiers_i_qwerty_s {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp I>, <&kp S>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        a_d: modifiers_a_qwerty_d {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp A>, <&kp D>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        o_f: modifiers_o_qwerty_f {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp O>, <&kp F>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        semicolon_g: modifiers_semicolon_qwerty_g {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&kp G>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        k_h: modifiers_k_qwerty_h {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp K>, <&kp H>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        t_j: modifiers_t_qwerty_j {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp T>, <&kp J>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        n_k: modifiers_n_qwerty_k {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp N>, <&kp K>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        s_l: modifiers_s_qwerty_l {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp S>, <&kp L>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        h_semicolon: modifiers_h_qwerty_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp H>, <&kp SEMICOLON>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        slash_b: modifiers_slash_qwerty_b {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp SLASH>, <&kp B>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        g_n: modifiers_g_qwerty_n {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp G>, <&kp N>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        d_m: modifiers_d_qwerty_m {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp D>, <&kp M>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        m_comma: modifiers_m_qwerty_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp M>, <&kp COMMA>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        j_period: modifiers_j_qwerty_period {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp J>, <&kp PERIOD>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
+        b_slash: modifiers_b_qwerty_slash {
+            compatible = "zmk,behavior-mod-morph";
+            #banding-cells = <0>;
+            bindings = <&kp B>, <&kp SLASH>;
+            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+        };
+
         mouse_ctrl: behavior_mouse_ctrl {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <500>;
             bindings = <&kp LCTRL>, <&mo 5>;
         };
+
     };
 
     keymap {
@@ -74,9 +267,9 @@
 
         DFAULT {
             bindings = <
-            &kp Q    &kp L    &kp U    &kp COMMA           &kp PERIOD                                         &kp F        &kp W             &kp R    &kp Y    &kp P
-            &kp E    &kp I    &kp A    &kp O                                                &kp SEMICOLON     &kp K        &kp T             &kp N    &kp S    &kp H
-            &kp Z    &kp X    &kp C    &kp V                                                &kp SLASH         &kp G        &kp D             &kp M    &kp J    &kp B
+            &kp Q    &l_w    &u_e    &comma_r           &period_t                                         &f_y        &w_u             &r_i    &y_o    &kp P
+            &e_a    &i_s    &a_d    &o_f                                                &semicolon_g     &k_h        &t_j             &n_k    &s_l    &h_semicolon
+            &kp Z    &kp X    &kp C    &kp V                                                &slash_b         &g_n        &d_m             &m_comma    &j_period    &b_slash
                                        &mt LSHIFT SPACE    &lt 2 F15     &mouse_ctrl        &mt LALT MINUS    &lt 3 F14    &mt LGUI ENTER
             >;
         };
