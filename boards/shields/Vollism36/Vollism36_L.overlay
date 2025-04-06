@@ -1,5 +1,6 @@
 #include "Vollism36.dtsi"
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 
 &kscan0 {
@@ -19,6 +20,12 @@
                 layers = <0 1>;
                 input-processors = <&zip_temp_layer 5 500>;
                 process-next;
+        };
+        scroll {
+                layers = <2>;
+                input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+                                 , <&zip_xy_scaler 1 16>
+                                 , <&zip_xy_to_scroll_mapper>;
         };
     };
 };
@@ -56,6 +63,5 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        scroll-layers = <2>;
     };
 };
