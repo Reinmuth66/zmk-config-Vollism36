@@ -56,7 +56,3 @@
         automouse-layer = <5>;
     };
 };
-
-&mkp_input_listener {
-        input-processors = <&zip_temp_layer 5 250>;
-};
