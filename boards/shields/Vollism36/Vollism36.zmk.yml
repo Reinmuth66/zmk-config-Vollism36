@@ -6,3 +6,6 @@ url: https://github.com/Reinmuth66/zmk-config-Vollism36
 requires: [seeeduino_xiao_ble]
 features:
   - keys
+siblings:
+  - Vollism36_L
+  - Vollism36_R
