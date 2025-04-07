@@ -61,217 +61,52 @@
     };
 
     behaviors {
-        l_w: modifiers_l_qwerty_w {
+        com_excl: comma_exclamation {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp L>, <&kp W>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            bindings = <&kp COMMA>, <&kp EXCL>;
+            mods = <(MOD_LSFT)>;
         };
-
-        u_e: modifiers_u_qwerty_e {
+        dot_qmark: dot_question {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp U>, <&kp E>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+            bindings = <&kp DOT>, <&kp QMARK>;
+            mods = <(MOD_LSFT)>;
         };
-
-        comma_r: modifiers_comma_qwerty_r {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp R>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        period_t: modifiers_period_qwerty_t {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PERIOD>, <&kp T>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        f_y: modifiers_f_qwerty_y {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp F>, <&kp Y>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        w_u: modifiers_w_qwerty_u {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp W>, <&kp U>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-         r_i: modifiers_r_qwerty_i {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp R>, <&kp I>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        y_o: modifiers_y_qwerty_o {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp Y>, <&kp O>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        e_a: modifiers_e_qwerty_a {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp E>, <&kp A>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        i_s: modifiers_i_qwerty_s {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp I>, <&kp S>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        a_d: modifiers_a_qwerty_d {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp A>, <&kp D>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        o_f: modifiers_o_qwerty_f {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp O>, <&kp F>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        semicolon_g: modifiers_semicolon_qwerty_g {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SEMICOLON>, <&kp G>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        k_h: modifiers_k_qwerty_h {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp K>, <&kp H>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        t_j: modifiers_t_qwerty_j {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp T>, <&kp J>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        n_k: modifiers_n_qwerty_k {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N>, <&kp K>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        s_l: modifiers_s_qwerty_l {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp S>, <&kp L>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        h_semicolon: modifiers_h_qwerty_semicolon {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp H>, <&kp SEMICOLON>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        slash_b: modifiers_slash_qwerty_b {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SLASH>, <&kp B>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        g_n: modifiers_g_qwerty_n {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp G>, <&kp N>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        d_m: modifiers_d_qwerty_m {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp D>, <&kp M>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        m_comma: modifiers_m_qwerty_comma {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp M>, <&kp COMMA>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        j_period: modifiers_j_qwerty_period {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp J>, <&kp PERIOD>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
-        b_slash: modifiers_b_qwerty_slash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp B>, <&kp SLASH>;
-            mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-        };
-
     };
 
     macros {
         qmt: qwerty_mt {
-    compatible = "zmk,behavior-macro-two-param";
-    wait-ms = <0>;
-    tap-ms = <0>;
-    #binding-cells = <2>;
-    bindings
-        = <&macro_press &mo 1>
-        , <&macro_param_1to1>
-        , <&macro_param_2to2>
-        , <&macro_press &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
-        , <&macro_pause_for_release>
-        , <&macro_param_1to1>
-        , <&macro_param_2to2>
-        , <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
-        , <&macro_release &mo 1>
-        ;
+            compatible = "zmk,behavior-macro-two-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <2>;
+            bindings
+                = <&macro_press &mo 1>
+                , <&macro_param_1to1>
+                , <&macro_param_2to2>
+                , <&macro_press &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
+                , <&macro_pause_for_release>
+                , <&macro_param_1to1>
+                , <&macro_param_2to2>
+                , <&macro_release &mt MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
+                , <&macro_release &mo 1>
+                ;
+        };
+        qm: qwerty_m {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings
+                = <&macro_press &mo 1>
+                , <&macro_param_1to1>
+                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_pause_for_release>
+                , <&macro_param_1to1>
+                , <&macro_release &kp MACRO_PLACEHOLDER>
+                , <&macro_release &mo 1>
+                ;
         };
     };
 
@@ -280,65 +115,65 @@
 
         DEFAULT {
             bindings = <
-            &kp Q    &l_w     &u_e     &comma_r            &period_t                                            &f_y         &w_u              &r_i        &y_o         &kp P
-            &kp E     &i_s     &a_d     &o_f                                                     &semicolon_g    &k_h         &t_j              &n_k        &s_l         &h_semicolon
-            &kp Z    &kp X    &kp C    &kp V                                                    &slash_b        &g_n         &d_m              &m_comma    &j_period    &b_slash
-                                       &mt LSHIFT SPACE    &lt 2 F15     &qmt LCTRL MINUS        &kp LALT        &lt 3 F14    &mt LGUI ENTER
+            &kp Q    &kp L    &kp U    &com_excl           &dot_qmark                                     &kp F        &kp W              &kp R    &kp Y    &kp P
+            &kp E    &kp I    &kp A    &kp O                                             &kp SEMICOLON    &kp K        &kp T              &kp N    &kp S    &kp H
+            &kp Z    &kp X    &kp C    &kp V                                             &kp SLASH        &kp G        &kp D              &kp M    &kp J    &kp B
+                                       &mt LSHIFT SPACE    &lt 2 F15    &qm LCTRL        &qm LALT         &lt 3 F14    &qmt LGUI ENTER
             >;
         };
 
         QWERTY {
             bindings = <
-            &kp Q    &kp W    &kp E    &kp R               &kp T                                           &kp Y        &kp U             &kp I        &kp O         &kp P
-            &kp A    &kp S    &kp D    &kp F                                                   &kp G       &kp H        &kp J             &kp K        &kp L         &kp SEMICOLON
-            &kp Z    &kp X    &kp C    &kp V                                                   &kp B       &kp N        &kp M             &kp COMMA    &kp PERIOD    &kp SLASH
-                                       &mt LSHIFT SPACE    &lt 2 F15    &mt LCTRL MINUS        &kp LALT    &lt 3 F14    &mt LGUI ENTER
+            &kp Q    &kp W    &kp E    &kp R               &kp T                                     &kp Y        &kp U             &kp I        &kp O      &kp P
+            &kp A    &kp S    &kp D    &kp F                                             &kp G       &kp H        &kp J             &kp K        &kp L      &kp SEMICOLON
+            &kp Z    &kp X    &kp C    &kp V                                             &kp B       &kp N        &kp M             &kp COMMA    &kp DOT    &kp SLASH
+                                       &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &kp LALT    &lt 3 F14    &mt LGUI ENTER
             >;
         };
 
         ARROW_NUM {
             bindings = <
-            &kp PG_UP           &kp HOME     &kp UP       &kp END             &kp LC(Y)                                                   &kp EQUAL          &kp N7    &kp N8    &kp N9    &kp COMMA
-            &kp PG_DN           &kp LEFT     &kp DOWN     &kp RIGHT                                               &kp KP_PLUS             &kp BSPC           &kp N4    &kp N5    &kp N6    &kp PERIOD
-            &mt LSHIFT LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)                                               &kp KP_MINUS            &kp DEL            &kp N1    &kp N2    &kp N3    &kp N0
-                                                          &mt LSHIFT SPACE    &lt 2 F15    &mt LCTRL MINUS        &mt LALT KP_MULTIPLY    &lt 3 KP_DIVIDE    &mt LGUI ENTER
+            &kp PG_UP           &kp HOME     &kp UP       &kp END             &kp LC(Y)                                       &kp EQUAL      &kp N7    &kp N8    &kp N9    &kp COMMA
+            &kp PG_DN           &kp LEFT     &kp DOWN     &kp RIGHT                                         &kp PLUS          &kp BSPC       &kp N4    &kp N5    &kp N6    &kp DOT
+            &mt LSHIFT LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)                                         &kp MINUS         &kp DEL        &kp N1    &kp N2    &kp N3    &kp N0
+                                                          &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &mt LALT ASTRK    &lt 3 SLASH    &mt LGUI ENTER
             >;
         };
 
         SYMBOL {
             bindings = <
-            &kp EXCL           &kp AT      &kp HASH     &kp DLLR            &kp PRCNT                                         &kp CARET    &kp AMPS            &kp ASTRK            &kp LPAR         &kp RPAR
-            &kp PAUSE_BREAK    &kp SLCK    &kp PSCRN    &kp INS                                                  &kp EQUAL    &kp BSPC     &kp LEFT_BRACKET    &kp RIGHT_BRACKET    &kp SEMICOLON    &kp SINGLE_QUOTE
-            &trans             &trans      &trans       &trans                                                   &kp K_APP    &kp DEL      &kp GRAVE           &kp MINUS            &kp BACKSLASH    &kp SLASH
-                                                        &mt LSHIFT SPACE    &lt 2 F15     &mt LCTRL MINUS        &kp LALT     &lt 3 F14    &mt LGUI ENTER
+            &kp GRAVE    &kp AT       &kp HASH     &kp DLLR            &kp PRCNT                                  &kp CARET    &kp AMPS          &kp ASTRK    &kp LPAR    &kp RPAR
+            &kp TILDE    &kp SLASH    &kp UNDER    &kp MINUS                                         &kp GRAVE    &kp BSPC     &kp SEMI          &kp SQT      &kp LBRC    &kp RBRC
+            &kp PIPE     &kp BSLH     &kp LT       &kp GT                                            &kp TILDE    &kp DEL      &kp COLON         &kp DQT      &kp LBKT    &kp RBKT
+                                                   &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &kp LALT     &lt 3 F14    &mt LGUI ENTER
             >;
         };
 
         FUNCTION {
             bindings = <
-            &kp LC(PG_UP)       &kp LC(HOME)    &kp LC(UP)      &kp LC(END)         &kp LC(Y)                                           &kp C_MUTE      &kp F1            &kp F2     &kp F3     &kp F4
-            &kp LC(PG_DN)       &kp LC(LEFT)    &kp LC(DOWN)    &kp LC(RIGHT)                                           &kp C_VOL_UP    &kp LC(BSPC)    &kp F5            &kp F6     &kp F7     &kp F8
-            &mt LSHIFT LC(Z)    &kp LC(X)       &kp LC(C)       &kp LC(V)                                               &kp C_VOL_DN    &kp LC(DEL)     &kp F9            &kp F10    &kp F11    &kp F12
-                                                                &mt LSHIFT SPACE    &lt 2 F15    &mt LCTRL MINUS        &kp LALT        &lt 3 F14       &mt LGUI ENTER
+            &kp LS(LC(PG_UP))    &kp LS(LC(HOME))    &kp LS(LC(UP))      &kp LS(LC(END))      &kp K_APP                                     &kp C_MUTE      &kp F1            &kp F2     &kp F3     &kp F4
+            &kp LS(LC(PG_DN))    &kp LS(LC(LEFT))    &kp LS(LC(DOWN))    &kp LS(LC(RIGHT))                                  &kp C_VOL_UP    &kp LC(BSPC)    &kp F5            &kp F6     &kp F7     &kp F8
+            &kp PAUSE_BRAEK      &kp SLCK            &kp PSCRN           &kp INS                                            &kp C_VOL_DN    &kp LC(DEL)     &kp F9            &kp F10    &kp F11    &kp F12
+                                                                         &mt LSHIFT SPACE     &lt 2 F15    &kp LCTRL        &kp LALT        &lt 3 F14       &mt LGUI ENTER
             >;
 
         };
 
         MOUSE {
             bindings = <
-            &kp LC(W)        &kp LC(T)    &kp LC(PG_UP)       &kp LC(PG_DN)    &kp LC(R)                          &trans       &trans            &trans    &trans    &trans
-            &kp LS(LC(T))    &mkp MB1     &mkp MB3            &mkp MB2                                &trans      &trans       &trans            &trans    &trans    &trans
-            &trans           &trans       &kp LA(LEFT)        &kp LA(RIGHT)                           &trans      &trans       &trans            &trans    &trans    &trans
-                                          &mt LSHIFT SPACE    &mo 2            &mt LCTRL MINUS        &kp LALT    &lt 3 F14    &mt LGUI ENTER
+            &kp LC(W)        &kp LC(T)    &kp LC(PG_UP)       &kp LC(PG_DN)    &kp LC(R)                    &trans       &trans            &trans    &trans    &trans
+            &kp LS(LC(T))    &mkp MB1     &mkp MB3            &mkp MB2                          &trans      &trans       &trans            &trans    &trans    &trans
+            &trans           &trans       &kp LA(LEFT)        &kp LA(RIGHT)                     &trans      &trans       &trans            &trans    &trans    &trans
+                                          &mt LSHIFT SPACE    &mo 2            &kp LCTRL        &kp LALT    &lt 3 F14    &mt LGUI ENTER
             >;
         };
 
         SYSTEM {
             bindings = <
-            &trans    &trans    &trans    &trans              &trans                                             &bt BT_SEL 0    &bt BT_SEL 1      &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
-            &trans    &trans    &trans    &trans                                                  &bootloader    &trans          &trans            &trans          &trans          &trans
-            &trans    &trans    &trans    &trans                                                  &trans         &trans          &trans            &trans          &bt BT_CLR      &bt BT_CLR_ALL
-                                          &mt LSHIFT SPACE    &lt 2 F15    &mt LCTRL MINUS        &kp LALT       &lt 3 F14       &mt LGUI ENTER
+            &trans    &trans    &trans    &trans              &trans                                       &bt BT_SEL 0    &bt BT_SEL 1      &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4
+            &trans    &trans    &trans    &trans                                            &bootloader    &trans          &trans            &trans          &trans          &trans
+            &trans    &trans    &trans    &trans                                            &trans         &trans          &trans            &trans          &bt BT_CLR      &bt BT_CLR_ALL
+                                          &mt LSHIFT SPACE    &lt 2 F15    &kp LCTRL        &kp LALT       &lt 3 F14       &mt LGUI ENTER
             >;
         };
     };
