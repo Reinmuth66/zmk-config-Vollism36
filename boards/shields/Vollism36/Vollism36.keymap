@@ -153,7 +153,7 @@
             bindings = <
             &kp LS(LC(PG_UP))    &kp LS(LC(HOME))    &kp LS(LC(UP))      &kp LS(LC(END))      &kp K_APP                                     &kp C_MUTE      &kp F1            &kp F2     &kp F3     &kp F4
             &kp LS(LC(PG_DN))    &kp LS(LC(LEFT))    &kp LS(LC(DOWN))    &kp LS(LC(RIGHT))                                  &kp C_VOL_UP    &kp LC(BSPC)    &kp F5            &kp F6     &kp F7     &kp F8
-            &kp PAUSE_BRAEK      &kp SLCK            &kp PSCRN           &kp INS                                            &kp C_VOL_DN    &kp LC(DEL)     &kp F9            &kp F10    &kp F11    &kp F12
+            &kp PAUSE_BREAK      &kp SLCK            &kp PSCRN           &kp INS                                            &kp C_VOL_DN    &kp LC(DEL)     &kp F9            &kp F10    &kp F11    &kp F12
                                                                          &mt LSHIFT SPACE     &lt 2 F15    &kp LCTRL        &kp LALT        &lt 3 F14       &mt LGUI ENTER
             >;
 
