@@ -2,6 +2,15 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
+#define WINDOWS 0
+#define LINUX 1
+#define QWERTY 2
+#define ARROW_NUM 3
+#define SYMBOL 4
+#define FUNCTION 5
+#define MOUSE 6
+#define SYSTEM 7
+
 
 &kscan0 {
         col-gpios
