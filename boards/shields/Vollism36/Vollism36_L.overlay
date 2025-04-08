@@ -27,7 +27,7 @@
         device = <&trackball>;
         automouse {
                 layers = <WINDOWS LINUX QWERTY>;
-                input-processors = <&zip_temp_layer MOUSE 750>;
+                input-processors = <&zip_temp_layer MOUSE 600>;
                 process-next;
         };
         scroll {
