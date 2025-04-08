@@ -52,6 +52,7 @@
             key-positions = <14 24>;
             timeout-ms = <80>;
             layers = <WINDOWS LINUX>;
+        };
 
         qwerty_on_off {
             bindings = <&tog QWERTY>;
