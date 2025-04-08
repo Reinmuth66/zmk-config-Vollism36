@@ -136,7 +136,7 @@
             &kp Q    &kp L    &kp U    &com_excl           &dot_qmark                                     &kp F        &kp W              &kp R    &kp Y    &kp P
             &kp E    &kp I    &kp A    &kp O                                             &kp SEMICOLON    &kp K        &kp T              &kp N    &kp S    &kp H
             &kp Z    &kp X    &kp C    &kp V                                             &kp SLASH        &kp G        &kp D              &kp M    &kp J    &kp B
-                                       &mt LSHIFT SPACE    &lt ARROW_NUM LC(F10)    &qm LCTRL        &qm LALT         &lt SYMBOL LC(F9)    &qmt LGUI ENTER
+                                       &mt LSHIFT SPACE    &lt ARROW_NUM LC(F1)    &qm LCTRL        &qm LALT         &lt SYMBOL LC(F9)    &qmt LGUI ENTER
             >;
         };
 
