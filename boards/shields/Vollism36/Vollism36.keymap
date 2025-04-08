@@ -22,6 +22,10 @@
     quick-tap-ms = <0>;
 };
 
+&lt {
+    flavor = "hold-preferred";
+};
+
 / {
 
     conditional_layers {
@@ -47,9 +51,16 @@
             timeout-ms = <80>;
         };
 
-        linux_on_off {
-            bindings = <&tog LINUX>;
-            key-positions = <14 24>;
+        linux_on {
+            bindings = <&tog_on LINUX>;
+            key-positions = <26 29>;
+            timeout-ms = <80>;
+            layers = <WINDOWS LINUX QWERTY>;
+        };
+
+        linux_off {
+            bindings = <&tog_off LINUX>;
+            key-positions = <20 23>;
             timeout-ms = <80>;
             layers = <WINDOWS LINUX>;
         };
@@ -80,6 +91,18 @@
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp QMARK>;
             mods = <(MOD_LSFT)>;
+        };
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
         };
     };
 
