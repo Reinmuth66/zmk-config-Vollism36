@@ -95,7 +95,7 @@
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp QMARK>;
             mods = <(MOD_LSFT)>;
-        };
+        };            
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -165,7 +165,21 @@
                 <&macro_release &kp MACRO_PLACEHOLDER>,
                 <&macro_tap &sl MOUSE>;
         };
-
+        ime_on: ime_on_f14_lang1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp F14 &kp LANG1>
+                ;
+        };
+        ime_off: ime_off_f15_lang2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp F15 &kp LANG2>
+                ;
+        };
+        
     };
 
     keymap {
@@ -185,7 +199,7 @@
             &kp Q    &kp L    &kp U    &com_excl           &dot_qmark                                          &kp F       &kp W                       &kp R              &kp Y    &kp P
             &kp E    &kp I    &kp A    &kp O                                                  &kp SEMICOLON    &kp K       &kp T                       &kp N              &kp S    &kp H
             &kp Z    &kp X    &kp C    &kp V                                                  &kp SLASH        &kp G       &kp D                       &kp M              &kp J    &kp B
-                                       &mt LSHIFT SPACE    &lt ARROW_NUM LC(LS(SPACE))        &qm LCTRL        &qm LALT    &lt SYMBOL LC(LA(SPACE))    &qmt LGUI ENTER
+                                       &mt LSHIFT SPACE    &lt ARROW_NUM LANG2        &qm LCTRL        &qm LALT    &lt SYMBOL LANG1    &qmt LGUI ENTER
             >;
         };
 
