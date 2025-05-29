@@ -26,28 +26,16 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        automouse {
-                layers = <WINDOWS LINUX QWERTY>;
-                input-processors = <&zip_temp_layer MOUSE 600>;
-                process-next;
-        };
+        //automouse {
+                //layers = <WINDOWS LINUX QWERTY>;
+                //input-processors = <&zip_temp_layer MOUSE 600>;
+                //process-next;
+        //};
         scroll {
                 layers = <ARROW_NUM>;
                 input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
                                  , <&zip_xy_scaler 1 30>
                                  , <&zip_xy_to_scroll_mapper>;
-        };
-        arrows {
-                layers = <4>;
-                bindings =
-                    <&kp RIGHT_ARROW>,
-                    <&kp LEFT_ARROW>,
-                    <&kp UP_ARROW>,
-                    <&kp DOWN_ARROW>;
-        
-                tick = <10>;
-                wait-ms = <5>;
-                tap-ms = <5>;
         };
     };
 };
@@ -85,5 +73,17 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        arrows {
+                layers = <4>;
+                bindings =
+                    <&kp RIGHT_ARROW>,
+                    <&kp LEFT_ARROW>,
+                    <&kp UP_ARROW>,
+                    <&kp DOWN_ARROW>;
+        
+                tick = <10>;
+                wait-ms = <5>;
+                tap-ms = <5>;
+        };
     };
 };
