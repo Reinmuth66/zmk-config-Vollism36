@@ -218,9 +218,9 @@
 
         FUNCTION {
             bindings = <
-            &kp LC(PG_UP)    &kp LC(HOME)    &kp LC(UP)      &kp LC(END)         &kp PAUSE_BREAK                                         &kp C_MUTE          &kp F1             &kp F2     &kp F3     &kp F4
-            &kp LC(PG_DN)    &kp LC(LEFT)    &kp LC(DOWN)    &kp LC(RIGHT)                                               &kp C_VOL_UP    &kp LC(BSPC)        &kp F5             &kp F6     &kp F7     &kp F8
-            &kp LSHIFT       &kp SLCK        &kp PSCRN       &kp INS                                                     &kp C_VOL_DN    &kp LC(DEL)         &kp F9             &kp F10    &kp F11    &kp F12
+            &kp LC(PG_UP)    &kp LC(HOME)    &kp LC(UP)      &kp LC(END)         &kp PAUSE_BREAK                                         &kp C_MUTE          &kp F7             &kp F8    &kp F9    &kp F12
+            &kp LC(PG_DN)    &kp LC(LEFT)    &kp LC(DOWN)    &kp LC(RIGHT)                                               &kp C_VOL_UP    &kp LC(BSPC)        &kp F4             &kp F5    &kp F6    &kp F11
+            &kp LSHIFT       &kp SLCK        &kp PSCRN       &kp INS                                                     &kp C_VOL_DN    &kp LC(DEL)         &kp F1             &kp F2    &kp F3    &kp F10
                                                              &mt LSHIFT SPACE    &lt ARROW_NUM LANG2    &qm LCTRL        &qm LALT        &lt SYMBOL LANG1    &qmt LGUI ENTER
             >;
 
@@ -229,7 +229,7 @@
         MOUSE {
             bindings = <
             &kp_aml LC(W)        &kp_aml LC(PG_UP)    &kp_aml LC(PG_DN)   &kp_aml LC(T)        &kp_aml LC(R)                    &trans            &trans             &trans    &trans    &trans
-            &kp_aml LS(LC(T))    &mkp_aml MB1         &mkp_aml MB3        &mkp_aml MB2                              &trans      &trans            &trans             &trans    &trans    &trans
+            &kp_aml LS(LC(T))    &mkp_aml MB3         &mkp_aml MB1        &mkp_aml MB2                              &trans      &trans            &trans             &trans    &trans    &trans
             &trans               &trans               &kp_aml LA(LEFT)    &kp_aml LA(RIGHT)                         &trans      &trans            &trans             &trans    &trans    &trans
                                                       &mt LSHIFT SPACE    &mo ARROW_NUM        &qm LCTRL            &qm LALT    &lt SYMBOL LANG1    &qmt LGUI ENTER
             >;
