@@ -185,7 +185,7 @@
                               &kp LALT    &mt LSHIFT SPACE    &lt ARROW_NUM LANG2    &mo MOUSE        &kp MINUS    &lt SYMBOL LANG1    &qmt LGUI ENTER
             >;
 
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp LEFT RIGHT>;
         };
 
         LINUX {
