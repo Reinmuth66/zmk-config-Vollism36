@@ -61,3 +61,7 @@
 	device = <&anin0>;
 	input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
 };
+
+&right_encoder {
+    status = "okay";
+};
