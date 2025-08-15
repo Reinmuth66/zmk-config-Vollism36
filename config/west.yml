@@ -20,7 +20,7 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
-    - name: zmk-input-analog-input-driver
+    - name: zmk-analog-input-driver
       remote: Reinmuth66
       revision: main
   self:
