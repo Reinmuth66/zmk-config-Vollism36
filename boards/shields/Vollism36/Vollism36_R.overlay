@@ -106,6 +106,7 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
         device = <&anin0>;
+		input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>;
 		layer4 {
 			layers = <SYMBOL>;
 			input-processors = <&zip_keybind_keys1>;
