@@ -59,6 +59,7 @@
             bindings = <&qm LCTRL>;
             key-positions = <10 11>;
             timeout-ms = <80>;
+            slow-release;
         };
 
         linux_on {
