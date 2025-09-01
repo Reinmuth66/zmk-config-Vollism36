@@ -135,7 +135,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
         automouse {
-                layers = <DEFAULT LINUX QWERTY>;
+                layers = <DEFAULT QWERTY>;
                 input-processors = <&zip_temp_layer MOUSE 2000>;
                 process-next;
         };
