@@ -5,7 +5,6 @@
 #include <behaviors/rgbled_widget.dtsi>
 #include <input/processors.dtsi>
 #include <mouse-gesture.dtsi>
-#include "Vollism36_R.overlay"
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
@@ -93,13 +92,13 @@
     // };
 };
 
-&analog_input_listener {
+/ {
+
+    analog_input_listener {
 		compatible = "zmk,input-listener";
         device = <&anin0>;
 		input-processors = <&zip_mouse_gesture>;
-};
-
-/ {
+    };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
