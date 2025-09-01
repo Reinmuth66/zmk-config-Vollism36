@@ -5,6 +5,7 @@
 #include <behaviors/rgbled_widget.dtsi>
 #include <input/processors.dtsi>
 #include <mouse-gesture.dtsi>
+#include "Vollism36_R.overlay"
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
@@ -38,7 +39,6 @@
 &zip_mouse_gesture {
     stroke-size = <1>;
     enable-eager-mode;
-	movement-threshold = <1>;
 
     history_back {
         pattern = <GESTURE_RIGHT>;

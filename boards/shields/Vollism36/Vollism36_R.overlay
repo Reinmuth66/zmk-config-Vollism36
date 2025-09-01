@@ -106,7 +106,6 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
         device = <&anin0>;
-		input-processors = <&zip_mouse_gesture>;
 		symbol {
 			layers = <SYMBOL>;
 			input-processors = <&zip_keybind_keys1>;
