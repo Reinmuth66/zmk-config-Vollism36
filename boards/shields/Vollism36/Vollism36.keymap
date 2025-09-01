@@ -120,7 +120,7 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&ime_off>;
             label = "lt_ime_off";
-        }
+        };
     };
 
     macros {
