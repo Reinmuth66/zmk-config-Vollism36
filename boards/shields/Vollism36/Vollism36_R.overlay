@@ -127,7 +127,7 @@
 		layer0 {
 			layers = <WINDOWS>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 1 30>
+							, <&zip_xy_scaler 1 50>
 							, <&zip_xy_to_scroll_mapper>;
 		};
 	};
@@ -135,11 +135,11 @@
 	trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-        /*automouse {
+        automouse {
                 layers = <WINDOWS LINUX QWERTY>;
-                input-processors = <&zip_temp_layer MOUSE 600>;
+                input-processors = <&zip_temp_layer MOUSE 2000>;
                 process-next;
-        };*/
+        };
         scroll {
                 layers = <ARROW_NUM>;
                 input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
@@ -147,6 +147,10 @@
                                  , <&zip_xy_to_scroll_mapper>;
         };
     };
+};
+
+&zip_temp_layer {
+    excluded-positions = <12 13 30 31 32>;
 };
 
 &trackball_listener {
