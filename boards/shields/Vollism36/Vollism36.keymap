@@ -111,7 +111,6 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&ime_on>;
-            label = "lt_ime_on";
         };
         lt_ime_off: lt_ime_off {
             compatible = "zmk,behavior-hold-tap";
@@ -119,7 +118,6 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&ime_off>;
-            label = "lt_ime_off";
         };
     };
 
@@ -173,16 +171,13 @@
             tap-ms = <0>;
             #binding-cells = <0>;
             bindings = <&tog_off MOUSE>;
-            label = "exit_AML";
         };
-
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
-            label = "KP_exit_AML";
         };
         ime_on: ime_on {
             compatible = "zmk,behavior-macro";
@@ -190,7 +185,6 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp LANG1 &kp MACRO_PLACEHOLDER>;
-            label = "ime_on";
         };
         ime_off: ime_off {
             compatible = "zmk,behavior-macro";
@@ -198,7 +192,6 @@
             tap-ms = <0>;
             #binding-cells = <1>;
             bindings = <&macro_param_1to1 &kp LANG2 &kp MACRO_PLACEHOLDER>;
-            label = "ime_off";
         };
     };
 
