@@ -36,7 +36,7 @@
 };
 
 &zip_mouse_gesture {
-    stroke-size = <1>;
+    stroke-size = <150>;
     enable-eager-mode;
 
     history_back {
@@ -94,7 +94,7 @@
 
 &trackball_listener {
     compatible = "zmk,input-listener";
-    device = <&trackball_split>;
+    device = <&anin0>;
 
     input-processors = <&zip_mouse_gesture>;
 };
