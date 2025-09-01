@@ -30,7 +30,7 @@
 
 &adc {
 	status = "okay";
-};,
+};
 
 &zip_mouse_gesture {
     stroke-size = <1>;
