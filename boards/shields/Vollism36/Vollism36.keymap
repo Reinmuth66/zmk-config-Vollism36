@@ -92,7 +92,7 @@
     // };
 };
 
-&trackball_listener {
+&analog_input_listener {
     compatible = "zmk,input-listener";
     device = <&anin0>;
 
