@@ -34,16 +34,16 @@
 	        #address-cells = <1>;
 	        #size-cells = <0>;
 	
-	        trackball_split: trackball_split@0 {
+	        analog_input_split: analog_input_split@0 {
 	            compatible = "zmk,input-split";
 	            reg = <0>;
 	        };
 	};
 	
-	trackball_listener: trackball_listener {
+	analog_input_listener: analog_input_listener {
 		compatible = "zmk,input-listener";
 		status = "disabled";
-		device = <&trackball_split>;
+		device = <&analog_input_split>;
 	};
 
     left_encoder: encoder_left {

@@ -92,14 +92,14 @@
     // };
 };
 
-/ {
-
-    analog_input_listener {
+&analog_input_listener {
 		compatible = "zmk,input-listener";
-        device = <&anin0>;
+        device = <&analog_input_splits>;
 		input-processors = <&zip_mouse_gesture>;
-    };
+};
 
+
+/ {
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
