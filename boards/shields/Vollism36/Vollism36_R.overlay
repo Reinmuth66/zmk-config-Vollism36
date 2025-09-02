@@ -76,7 +76,7 @@
 	                 , <&kp SLASH>
 					 ;
 	        tick = <150>;
-	        wait-ms = <1000>;
+	        wait-ms = <100>;
 	        tap-ms = <10>;
 	        // mode = <0>
 	        // threshold = <10>
