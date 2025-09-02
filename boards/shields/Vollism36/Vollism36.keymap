@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/rgbled_widget.dtsi>
 #include <input/processors.dtsi>
+#include <mouse-gesture.dtsi>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
@@ -32,6 +33,40 @@
 
 &mkp_input_listener {
     input-processors = <&zip_temp_layer MOUSE 2000>;
+};
+
+&zip_mouse_gesture {
+    stroke-size = <300>; // Optional (default: 500)
+    enable-eager-mode; // Optional, but recommended
+
+    history_back {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+
+    history_forward {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(RIGHT)>;
+    };
+
+    close_tab {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LC(W)>;
+    };
+
+    new_tab {
+        pattern = <GESTURE_DOWN GESTURE_LEFT>;
+        bindings = <&kp LC(T)>;
+        wait-ms = <20>;  // Optional: wait time between behaviors (default: CONFIG_ZMK_MACRO_DEFAULT_WAIT_MS)
+        tap-ms = <40>;   // Optional: press duration for each behavior (default: CONFIG_ZMK_MACRO_DEFAULT_TAP_MS)
+    };
+};
+
+&analog_input_listener {
+    compatible = "zmk,input-listener";
+    device = <&anin0>;
+
+    input-processors = <&zip_mouse_gesture>;
 };
 
 / {
@@ -202,7 +237,7 @@
             bindings = <
             &kp Q    &kp L    &kp U             &com_excl           &dot_qmark                                                 &kp F                    &kp W              &kp R    &kp Y    &kp P
             &kp E    &kp I    &kp_exit_AML A    &kp_exit_AML O                                                                 &kp K                    &kp T              &kp N    &kp S    &kp H
-            &kp Z    &kp X    &kp C             &kp V                                                             &kp SLASH    &kp G                    &kp D              &kp M    &kp J    &kp B
+            &kp Z    &kp X    &kp C             &kp V                                                             &mouse_gesture    &kp G                    &kp D              &kp M    &kp J    &kp B
                               &kp LALT          &mt LSHIFT SPACE    &lt_ime_off ARROW_NUM F15    &qm LCTRL        &kp MINUS    &lt_ime_on SYMBOL F14    &qmt LGUI ENTER
             >;
 
