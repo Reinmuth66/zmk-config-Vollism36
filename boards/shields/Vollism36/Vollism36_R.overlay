@@ -65,11 +65,80 @@
 
 		};
 	};
+
+	zip_keybind_keys0: zip_keybind_keys0 {
+		compatible = "zmk,input-processor-keybind";
+		#input-processor-cells = <0>;
+		track_remainders;
+		bindings = <&kp RIGHT>
+				 , <&kp LEFT>
+				 , <&kp UP>
+				 , <&kp DOWN>
+				 ;
+		tick = <40>;
+		wait-ms = <0>;
+		tap-ms = <10>;
+		// mode = <0>
+		// threshold = <10>
+		// max_threshold = <200>
+		// max_pending_activations = <10>
+    };
+	zip_keybind_keys1: zip_keybind_keys1 {
+		compatible = "zmk,input-processor-keybind";
+		#input-processor-cells = <0>;
+		track_remainders;
+		bindings = <&kp N1>
+				 , <&kp N2>
+				 , <&kp N3>
+				 , <&kp N4>
+				 ;
+		tick = <40>;
+		wait-ms = <0>;
+		tap-ms = <10>;
+		// mode = <0>
+		// threshold = <10>
+		// max_threshold = <200>
+		// max_pending_activations = <10>
+	};	
 };
 
-&analog_input_splits {
-	devices = <&anin0>;
+&analog_input_listener {
+    status = "okay";
+	device = <&anin0>;
+    symbol {
+        layers = <SYMBOL>;
+        input-processors = <&zip_keybind_keys1>;
+        process-next;
+    };
+    symbol-prevent {
+        layers = <SYMBOL>;
+        input-processors = <&zip_xy_scaler 0 1>;
+    };
+    arrow_num {
+        layers = <ARROW_NUM>;
+        input-processors = <&zip_keybind_keys0>;
+        process-next;
+    };
+    arrow_num-prevent {
+        layers = <ARROW_NUM>;
+        input-processors = <&zip_xy_scaler 0 1>;
+    };
+    default {
+        layers = <DEFAULT>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+                         , <&zip_xy_scaler 1 50>
+                         , <&zip_xy_to_scroll_mapper>;
+    };
+};
+
+&trackball_listener {
+	status = "okay";
 }
+
+&zip_temp_layer {
+    excluded-positions = <12 13 30 31 32>;
+};
+
 
 &right_encoder {
     status = "okay";

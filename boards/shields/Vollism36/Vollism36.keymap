@@ -93,9 +93,9 @@
 };
 
 &analog_input_listener {
-		compatible = "zmk,input-listener";
-        device = <&analog_input_splits>;
-		input-processors = <&zip_mouse_gesture>;
+    compatible = "zmk,input-listener";
+    device = <&anin0>;
+    input-processors = <&zip_mouse_gesture>;
 };
 
 
