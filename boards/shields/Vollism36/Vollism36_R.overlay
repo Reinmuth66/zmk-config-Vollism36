@@ -69,6 +69,7 @@
 	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
+			track_remainders;
 	        bindings = <&kp MINUS>
 	                 , <&kp PLUS>
 	                 , <&kp ASTERISK>
