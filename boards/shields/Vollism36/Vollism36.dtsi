@@ -46,6 +46,11 @@
 		device = <&trackball_split>;
 	};
 
+    analog_input_listener: analog_input_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+
     left_encoder: encoder_left {
         status = "disabled";
     };
