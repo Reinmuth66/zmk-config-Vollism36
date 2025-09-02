@@ -103,9 +103,67 @@
 	};	
 };
 
+&zip_mouse_gesture {
+    stroke-size = <1>;
+    enable-eager-mode;
+
+    history_back {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(LEFT)>;
+    };
+
+    history_forward {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(RIGHT)>;
+    };
+
+    close_tab {
+        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
+        bindings = <&kp LC(W)>;
+    };
+
+    new_tab {
+        pattern = <GESTURE_DOWN GESTURE_LEFT>;
+        bindings = <&kp LC(T)>;
+    };
+
+    app_switcher {
+        pattern = <GESTURE_DOWN GESTURE_UP>;
+        bindings = <&kp UP>;
+    };
+
+    /*virtual_desktop_prev {
+        pattern = <GESTURE_LEFT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(LEFT))>;
+    };
+
+    virtual_desktop_next {
+        pattern = <GESTURE_RIGHT GESTURE_DOWN>;
+        bindings = <&kp LG(LC(RIGHT))>;
+    };*/
+
+    // left {
+    //     gesture = <GESTURE_LEFT>;
+    //     bindings = <&kp LEFT>;
+    // };
+    // right {
+    //     gesture = <GESTURE_RIGHT>;
+    //     bindings = <&kp RIGHT>;
+    // };
+    // up {
+    //     gesture = <GESTURE_UP>;
+    //     bindings = <&kp UP>;
+    // };
+    // down {
+    //     gesture = <GESTURE_DOWN>;
+    //     bindings = <&kp DOWN>;
+    // };
+};
+
 &analog_input_listener {
     status = "okay";
 	device = <&anin0>;
+	input-processors = <&zip_mouse_gesture>;
     symbol {
         layers = <SYMBOL>;
         input-processors = <&zip_keybind_keys1>;
@@ -134,7 +192,7 @@
 
 &trackball_listener {
 	status = "okay";
-}
+};
 
 &zip_temp_layer {
     excluded-positions = <12 13 30 31 32>;

@@ -35,7 +35,7 @@
     input-processors = <&zip_temp_layer MOUSE 2000>;
 };
 
-&zip_mouse_gesture {
+/*&zip_mouse_gesture {
     stroke-size = <1>;
     enable-eager-mode;
 
@@ -62,7 +62,7 @@
     app_switcher {
         pattern = <GESTURE_DOWN GESTURE_UP>;
         bindings = <&kp UP>;
-    };
+    };*/
 
     /*virtual_desktop_prev {
         pattern = <GESTURE_LEFT GESTURE_DOWN>;
@@ -90,13 +90,13 @@
     //     gesture = <GESTURE_DOWN>;
     //     bindings = <&kp DOWN>;
     // };
-};
+//};
 
-&analog_input_listener {
+/*&analog_input_listener {
     compatible = "zmk,input-listener";
     device = <&anin0>;
     input-processors = <&zip_mouse_gesture>;
-};
+};*/
 
 
 / {
