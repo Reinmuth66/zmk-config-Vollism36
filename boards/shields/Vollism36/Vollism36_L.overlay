@@ -72,19 +72,3 @@
         /* NOTE: apply this mode if you need 250Hz with direct USB connection. */
     };
 };
-
-&trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-    /*automouse {
-            layers = <DEFAULT QWERTY>;
-            input-processors = <&zip_temp_layer MOUSE 2000>;
-            process-next;
-    };*/
-    scroll {
-            layers = <ARROW_NUM>;
-            input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-                                , <&zip_xy_scaler 1 30>
-                                , <&zip_xy_to_scroll_mapper>;
-    };
-};

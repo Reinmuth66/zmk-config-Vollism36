@@ -100,7 +100,54 @@
 		// threshold = <10>
 		// max_threshold = <200>
 		// max_pending_activations = <10>
-	};	
+	};
+
+	analog_input_listener {
+		status = "okay";
+		device = <&anin0>;
+		input-processors = <&zip_mouse_gesture>;
+		symbol {
+			layers = <SYMBOL>;
+			input-processors = <&zip_keybind_keys1>;
+			process-next;
+		};
+		symbol-prevent {
+			layers = <SYMBOL>;
+			input-processors = <&zip_xy_scaler 0 1>;
+		};
+		arrow_num {
+			layers = <ARROW_NUM>;
+			input-processors = <&zip_keybind_keys0>;
+			process-next;
+		};
+		arrow_num-prevent {
+			layers = <ARROW_NUM>;
+			input-processors = <&zip_xy_scaler 0 1>;
+		};
+		default {
+			layers = <DEFAULT>;
+			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+							, <&zip_xy_scaler 1 50>
+							, <&zip_xy_to_scroll_mapper>;
+		};
+	};
+
+	trackball_listener {
+		compatible = "zmk,input-listener";
+		status = "okay";
+		device = <&trackball_split>;
+		/*automouse {
+				layers = <DEFAULT QWERTY>;
+				input-processors = <&zip_temp_layer MOUSE 2000>;
+				process-next;
+		};*/
+		scroll {
+				layers = <ARROW_NUM>;
+				input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
+									, <&zip_xy_scaler 1 30>
+									, <&zip_xy_to_scroll_mapper>;
+		};
+	};
 };
 
 &zip_mouse_gesture {
@@ -158,36 +205,6 @@
     //     gesture = <GESTURE_DOWN>;
     //     bindings = <&kp DOWN>;
     // };
-};
-
-&analog_input_listener {
-    status = "okay";
-	device = <&anin0>;
-	input-processors = <&zip_mouse_gesture>;
-    symbol {
-        layers = <SYMBOL>;
-        input-processors = <&zip_keybind_keys1>;
-        process-next;
-    };
-    symbol-prevent {
-        layers = <SYMBOL>;
-        input-processors = <&zip_xy_scaler 0 1>;
-    };
-    arrow_num {
-        layers = <ARROW_NUM>;
-        input-processors = <&zip_keybind_keys0>;
-        process-next;
-    };
-    arrow_num-prevent {
-        layers = <ARROW_NUM>;
-        input-processors = <&zip_xy_scaler 0 1>;
-    };
-    default {
-        layers = <DEFAULT>;
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-                         , <&zip_xy_scaler 1 50>
-                         , <&zip_xy_to_scroll_mapper>;
-    };
 };
 
 &trackball_listener {
