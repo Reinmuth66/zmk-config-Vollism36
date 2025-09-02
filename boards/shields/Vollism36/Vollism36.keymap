@@ -62,12 +62,6 @@
     };
 };
 
-&analog_input_listener {
-    compatible = "zmk,input-listener";
-    device = <&anin0>;
-    input-processors = <&zip_mouse_gesture>;
-};
-
 / {
 
     conditional_layers {
