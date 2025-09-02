@@ -151,7 +151,7 @@
 };
 
 &zip_mouse_gesture {
-    stroke-size = <300>; // Optional (default: 500)
+    stroke-size = <1>; // Optional (default: 500)
     enable-eager-mode; // Optional, but recommended
 
     history_back {
