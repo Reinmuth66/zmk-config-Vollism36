@@ -49,7 +49,6 @@
     analog_input_listener: analog_input_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&anin0>;
     };
 
     left_encoder: encoder_left {
