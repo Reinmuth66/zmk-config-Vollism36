@@ -106,7 +106,6 @@
 		status = "okay";
 		compatible = "zmk,input-listener";
         device = <&anin0>;
-		input-processors = <&zip_mouse_gesture>;
 		symbol {
 			layers = <SYMBOL>;
 			input-processors = <&zip_keybind_keys1>;
@@ -147,33 +146,6 @@
                                  , <&zip_xy_scaler 1 30>
                                  , <&zip_xy_to_scroll_mapper>;
         };
-    };
-};
-
-&zip_mouse_gesture {
-    stroke-size = <1>; // Optional (default: 500)
-    enable-eager-mode; // Optional, but recommended
-
-    history_back {
-        pattern = <GESTURE_RIGHT>;
-        bindings = <&kp LA(LEFT)>;
-    };
-
-    history_forward {
-        pattern = <GESTURE_LEFT>;
-        bindings = <&kp LA(RIGHT)>;
-    };
-
-    close_tab {
-        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
-        bindings = <&kp LC(W)>;
-    };
-
-    new_tab {
-        pattern = <GESTURE_DOWN GESTURE_LEFT>;
-        bindings = <&kp LC(T)>;
-        wait-ms = <20>;  // Optional: wait time between behaviors (default: CONFIG_ZMK_MACRO_DEFAULT_WAIT_MS)
-        tap-ms = <40>;   // Optional: press duration for each behavior (default: CONFIG_ZMK_MACRO_DEFAULT_TAP_MS)
     };
 };
 
