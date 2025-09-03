@@ -245,7 +245,7 @@
             &trans       &trans       &kp PIPE    &kp BSLH                               &kp K_APP    &kp DEL      &kp SQT      &kp DQT      &kp LBRC    &kp RBRC
                                       &trans       &trans     &trans       &trans        &trans       &trans       &trans
             >;
-            sensor-bindings = <&inc_dec_kp LS(LC(GT)) LS(LC(LT)) &inc_dec_kp LS(LC(GT)) LS(LC(LT))>;
+            sensor-bindings = <&inc_dec_kp LS(LC(LT)) LS(LC(GT)) &inc_dec_kp LS(LC(LT)) LS(LC(GT))>;
         };
 
         FUNCTION {
