@@ -66,7 +66,24 @@
 		};
 	};
 
-	zip_keybind_keys0: zip_keybind_keys0 {
+	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
+	        compatible = "zmk,input-processor-keybind";
+	        #input-processor-cells = <0>;
+			track_remainders;
+	        bindings = <&kp MINUS>
+	                 , <&kp PLUS>
+	                 , <&kp ASTERISK>
+	                 , <&kp SLASH>
+					 ;
+	        tick = <150>;
+	        wait-ms = <100>;
+	        tap-ms = <10>;
+	        // mode = <0>
+	        // threshold = <10>
+	        // max_threshold = <200>
+	        // max_pending_activations = <10>
+    };
+	zip_keybind_keys_arrow: zip_keybind_keys_arrow {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 		    track_remainders;
@@ -78,24 +95,7 @@
 	        tick = <40>;
 	        wait-ms = <0>;
 	        tap-ms = <10>;
-	        // mode = <0>
-	        // threshold = <10>
-	        // max_threshold = <200>
-	        // max_pending_activations = <10>
-    };
-	zip_keybind_keys1: zip_keybind_keys1 {
-	        compatible = "zmk,input-processor-keybind";
-	        #input-processor-cells = <0>;
-		    track_remainders;
-	        bindings = <&kp N1>
-	                 , <&kp N2>
-	                 , <&kp N3>
-	                 , <&kp N4>
-                     ;
-	        tick = <40>;
-	        wait-ms = <0>;
-	        tap-ms = <10>;
-	        // mode = <0>
+	        mode = <0>;
 	        // threshold = <10>
 	        // max_threshold = <200>
 	        // max_pending_activations = <10>
@@ -107,7 +107,7 @@
         device = <&anin0>;
 		symbol {
 			layers = <SYMBOL>;
-			input-processors = <&zip_keybind_keys1>;
+			input-processors = <&zip_keybind_keys_arrow>;
 			process-next;
 		};
 		symbol-prevent {
@@ -116,7 +116,7 @@
 		};
 		arrow_num {
 			layers = <ARROW_NUM>;
-			input-processors = <&zip_keybind_keys0>;
+			input-processors = <&zip_keybind_keys_f_a_o>;
 			process-next;
 		};
 		arrow_num-prevent {
@@ -126,8 +126,8 @@
 		default {
 			layers = <DEFAULT>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
-							, <&zip_xy_scaler 1 50>
-							, <&zip_xy_to_scroll_mapper>;
+							 , <&zip_xy_scaler 1 30>
+							 , <&zip_xy_to_scroll_mapper>;
 		};
 	};
 
