@@ -59,13 +59,6 @@
             timeout-ms = <80>;
         };
 
-        ctrl {
-            bindings = <&qm LCTRL>;
-            key-positions = <12 13>;
-            timeout-ms = <50>;
-            slow-release;
-        };
-
         qwerty_on_off {
             bindings = <&tog QWERTY>;
             key-positions = <4 5>;
@@ -118,6 +111,23 @@
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&ime_off>;
+        };
+        history_back: history_back {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&none>, <&kp LA(LEFT)>;
+			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+		};
+		history_forward: history_forward {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&none>, <&kp LA(RIGHT)>;
+			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+		};
+        history_encoder: history_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&history_back>, <&history_forward>;
         };
     };
 
@@ -200,13 +210,12 @@
 
         DEFAULT {
             bindings = <
-            &kp Q    &kp L    &kp U             &com_excl           &dot_qmark                                                 &kp F                    &kp W              &kp R    &kp Y    &kp P
-            &kp E    &kp I    &kp_exit_AML A    &kp_exit_AML O                                                                 &kp K                    &kp T              &kp N    &kp S    &kp H
-            &kp Z    &kp X    &kp C             &kp V                                                             &kp SLASH    &kp G                    &kp D              &kp M    &kp J    &kp B
-                              &kp LALT          &mt LSHIFT SPACE    &lt_ime_off ARROW_NUM F15    &qm LCTRL        &kp MINUS    &lt_ime_on SYMBOL F14    &qmt LGUI ENTER
+            &kp Q    &kp L    &kp U       &com_excl           &dot_qmark                                                 &kp F                    &kp W              &kp R    &kp Y    &kp P
+            &kp E    &kp I    &kp A       &kp O                                                                          &kp K                    &kp T              &kp N    &kp S    &kp H
+            &kp Z    &kp X    &kp C       &kp V                                                             &kp SLASH    &kp G                    &kp D              &kp M    &kp J    &kp B
+                              &qm LALT    &mt LSHIFT SPACE    &lt_ime_off ARROW_NUM F15    &qm LCTRL        &kp MINUS    &lt_ime_on SYMBOL F14    &qmt LGUI ENTER
             >;
-
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp LEFT RIGHT>;
+            sensor-bindings = <&inc_dec_kp LC(PG_UP) LC(PG_DN) &inc_dec_kp LC(PG_UP) LC(PG_DN)>;
         };
 
         QWERTY {
@@ -216,6 +225,7 @@
             &mt LSHIFT Z    &kp X    &kp C     &kp V                             &kp G    &kp N     &kp M     &kp COMMA    &kp DOT    &kp SLASH
                                      &trans    &trans    &trans    &trans        &kp B    &trans    &trans
             >;
+            sensor-bindings = <&history_encoder &history_encoder>;
         };
 
         ARROW_NUM {
@@ -225,33 +235,35 @@
             &mt LSHIFT LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)                               &kp SEMICOLON    &kp DEL      &kp N1    &kp N2    &kp N3    &kp N0
                                              &trans       &trans       &trans       &trans        &trans           &trans       &trans
             >;
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS) &inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
 
         SYMBOL {
             bindings = <
-            &kp GRAVE    &kp AT       &kp HASH     &kp DLLR     &kp PRCNT                               &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR    &kp RPAR
-            &kp TILDE    &kp SLASH    &kp UNDER    &kp MINUS                                            &kp BSPC     &kp SEMI     &kp COLON    &kp LBKT    &kp RBKT
-            &kp PIPE     &kp BSLH     &kp LT       &kp GT                                  &kp K_APP    &kp DEL      &kp SQT      &kp DQT      &kp LBRC    &kp RBRC
-                                      &trans       &trans       &trans       &trans        &trans       &trans       &trans
+            &kp GRAVE    &kp AT       &kp HASH    &kp DLLR    &kp PRCNT                               &kp CARET    &kp AMPS     &kp ASTRK    &kp LPAR    &kp RPAR
+            &kp TILDE    &kp SLASH    &kp LT      &kp GT                                              &kp BSPC     &kp SEMI     &kp COLON    &kp LBKT    &kp RBKT
+            &trans       &trans       &kp PIPE    &kp BSLH                               &kp K_APP    &kp DEL      &kp SQT      &kp DQT      &kp LBRC    &kp RBRC
+                                      &trans       &trans     &trans       &trans        &trans       &trans       &trans
             >;
+            sensor-bindings = <&inc_dec_kp LS(LC(LT)) LS(LC(GT)) &inc_dec_kp LS(LC(LT)) LS(LC(GT))>;
         };
 
         FUNCTION {
             bindings = <
-            &kp LC(PG_UP)    &kp LC(HOME)    &kp LC(UP)      &kp LC(END)      &kp PAUSE_BREAK                                &kp C_MUTE      &kp F7    &kp F8    &kp F9    &kp F12
-            &kp LC(PG_DN)    &kp LC(LEFT)    &kp LC(DOWN)    &kp LC(RIGHT)                                                   &kp LC(BSPC)    &kp F4    &kp F5    &kp F6    &kp F11
-            &kp LSHIFT       &kp SLCK        &kp PSCRN       &kp INS                                           &trans        &kp LC(DEL)     &kp F1    &kp F2    &kp F3    &kp F10
-                                             &trans          &trans           &trans             &trans        &trans        &trans          &trans
+            &trans             &trans      &trans       &trans     &trans                  &kp C_MUTE    &kp F7    &kp F8    &kp F9    &kp F12
+            &trans             &trans      &trans       &trans                             &kp BSPC      &kp F4    &kp F5    &kp F6    &kp F11
+            &kp PAUSE_BREAK    &kp SLCK    &kp PSCRN    &kp INS                  &trans    &kp DEL       &kp F1    &kp F2    &kp F3    &kp F10
+                                           &trans       &trans     &trans        &trans    &trans        &trans    &trans
             >;
-
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         MOUSE {
             bindings = <
-            &kp LC(W)        &kp LC(PG_UP)    &kp LC(PG_DN)   &kp LC(T)           &kp LC(R)                                         &trans              &trans             &trans    &trans    &trans
+            &kp LC(W)        &kp LA(LEFT)    &kp LA(RIGHT)   &kp LC(T)           &kp LC(R)                                         &trans              &trans             &trans    &trans    &trans
             &kp LS(LC(T))    &trans         &trans        &trans                                                              &trans              &trans             &trans    &trans    &trans
-            &trans           &trans           &kp LA(LEFT)    &kp LA(RIGHT)                                             &trans      &trans              &trans             &trans    &trans    &trans
-                                              &trans        &mkp MB3    &mkp MB1    &mkp MB2            &trans    &trans    &trans
+            &trans           &mkp MB3           &mkp MB1    &mkp MB2                                             &trans      &trans              &trans             &trans    &trans    &trans
+                                              &trans        &trans    &trans    &trans            &trans    &trans    &trans
             >;
         };
 
