@@ -138,7 +138,7 @@
 					 ;
 	        tick = <150>;
 	        wait-ms = <100>;
-	        tap-ms = <10>;
+	        tap-ms = <50>;
 	        mode = <1>;
 	        // threshold = <10>
 	        // max_threshold = <200>
