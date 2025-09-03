@@ -67,16 +67,16 @@
 	};
 
 	behaviors {
+		new_tab: new_tab {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&kp LGUI>, <&kp LC(T)>;
+			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+		};
 		close_tab: close_tab {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
 			bindings = <&none>, <&kp LC(W)>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-		new_tab: new_tab {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&none>, <&kp LC(T)>;
 			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
 		};
 		reload_tab: reload_tab {
@@ -94,7 +94,7 @@
 		right: right {
 			compatible = "zmk,behavior-mod-morph";
 			#binding-cells = <0>;
-			bindings = <&none>, <&kp RIGHT>;
+			bindings = <&kp LGUI>, <&kp RIGHT>;
 			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
 		};
 		left: left {
@@ -155,7 +155,7 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 			track_remainders;
-	        bindings = <&kp T>
+	        bindings = <&new_tab>
 	                 , <&close_tab>
 					 , <&reload_tab>
 	                 , <&return_tab>
