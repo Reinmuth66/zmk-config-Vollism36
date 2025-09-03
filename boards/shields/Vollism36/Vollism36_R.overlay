@@ -132,7 +132,7 @@
 	        #input-processor-cells = <0>;
 			track_remainders;
 	        bindings = <&new_tab>
-	                 , <&close_tab>
+	                 , <&kp W>
 					 , <&reload_tab>
 	                 , <&return_tab>
 					 ;
