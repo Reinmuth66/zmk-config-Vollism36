@@ -91,6 +91,30 @@
 			bindings = <&none>, <&kp LS(LC(T))>;
 			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
 		};
+		right: right {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&none>, <&kp RIGHT>;
+			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+		};
+		left: left {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&none>, <&kp LEFT>;
+			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+		};
+		up: up {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&none>, <&kp UP>;
+			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+		};
+		down: down {
+			compatible = "zmk,behavior-mod-morph";
+			#binding-cells = <0>;
+			bindings = <&none>, <&kp DOWN>;
+			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
+		};
 	};
 
 	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
@@ -114,10 +138,10 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 		    track_remainders;
-	        bindings = <&kp RIGHT>
-	                 , <&kp LEFT>
-	                 , <&kp UP>
-	                 , <&kp DOWN>
+	        bindings = <&right>
+	                 , <&left>
+	                 , <&up>
+	                 , <&down>
                      ;
 	        tick = <40>;
 	        wait-ms = <0>;
@@ -131,8 +155,8 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 			track_remainders;
-	        bindings = <&new_tab>
-	                 , <&kp W>
+	        bindings = <&kp T>
+	                 , <&close_tab>
 					 , <&reload_tab>
 	                 , <&return_tab>
 					 ;
@@ -188,20 +212,20 @@
 	trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
-		scroll {
+		arrow_num {
 			layers = <ARROW_NUM>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
 							 , <&zip_xy_scaler 1 30>
 							 , <&zip_xy_to_scroll_mapper>
 							 ;
         };
-		arrow_num {
-			layers = <ARROW_NUM>;
+		qwerty {
+			layers = <QWERTY>;
 			input-processors = <&zip_keybind_keys_arrow>;
 			process-next;
 		};
-		arrow_num-prevent {
-			layers = <ARROW_NUM>;
+		qwerty-prevent {
+			layers = <QWERTY>;
 			input-processors = <&zip_xy_scaler 0 1>;
 		};
         automouse {
