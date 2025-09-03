@@ -66,57 +66,6 @@
 		};
 	};
 
-	behaviors {
-		new_tab: new_tab {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp LGUI>, <&kp LC(T)>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-		close_tab: close_tab {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&none>, <&kp LC(W)>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-		reload_tab: reload_tab {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&none>, <&kp LC(R)>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-		return_tab: return_tab {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&none>, <&kp LS(LC(T))>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-		right: right {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&kp LGUI>, <&kp RIGHT>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-		left: left {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&none>, <&kp LEFT>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-		up: up {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&none>, <&kp UP>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-		down: down {
-			compatible = "zmk,behavior-mod-morph";
-			#binding-cells = <0>;
-			bindings = <&none>, <&kp DOWN>;
-			mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI)>;
-		};
-	};
-
 	zip_keybind_keys_f_a_o: zip_keybind_keys_four_arithmetic_operations {
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
@@ -138,10 +87,10 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 		    track_remainders;
-	        bindings = <&right>
-	                 , <&left>
-	                 , <&up>
-	                 , <&down>
+	        bindings = <&kp RIGHT>
+	                 , <&kp LEFT>
+	                 , <&kp UP>
+	                 , <&kp DOWN>
                      ;
 	        tick = <40>;
 	        wait-ms = <0>;
@@ -155,10 +104,10 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 			track_remainders;
-	        bindings = <&new_tab>
-	                 , <&close_tab>
-					 , <&reload_tab>
-	                 , <&return_tab>
+	        bindings = <&kp T>
+	                 , <&kp W>
+					 , <&kp R>
+	                 , <&kp LS(T)>
 					 ;
 	        tick = <150>;
 	        wait-ms = <100>;
@@ -212,6 +161,15 @@
 	trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball_split>;
+		symbol {
+			layers = <SYMBOL>;
+			input-processors = <&zip_keybind_keys_arrow>;
+			process-next;
+		};
+		symbol-prevent {
+			layers = <SYMBOL>;
+			input-processors = <&zip_xy_scaler 0 1>;
+		};
 		arrow_num {
 			layers = <ARROW_NUM>;
 			input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>
@@ -219,15 +177,6 @@
 							 , <&zip_xy_to_scroll_mapper>
 							 ;
         };
-		qwerty {
-			layers = <QWERTY>;
-			input-processors = <&zip_keybind_keys_arrow>;
-			process-next;
-		};
-		qwerty-prevent {
-			layers = <QWERTY>;
-			input-processors = <&zip_xy_scaler 0 1>;
-		};
         automouse {
 			layers = <DEFAULT>;
 			input-processors = <&zip_temp_layer MOUSE 2000>;
