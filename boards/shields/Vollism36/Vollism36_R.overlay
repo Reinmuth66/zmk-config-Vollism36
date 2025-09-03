@@ -131,8 +131,8 @@
 	        compatible = "zmk,input-processor-keybind";
 	        #input-processor-cells = <0>;
 			track_remainders;
-	        bindings = <&close_tab>
-	                 , <&new_tab>
+	        bindings = <&new_tab>
+	                 , <&close_tab>
 					 , <&reload_tab>
 	                 , <&return_tab>
 					 ;

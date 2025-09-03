@@ -225,7 +225,7 @@
             &mt LSHIFT Z    &kp X    &kp C     &kp V                             &kp G    &kp N     &kp M     &kp COMMA    &kp DOT    &kp SLASH
                                      &trans    &trans    &trans    &trans        &kp B    &trans    &trans
             >;
-            sensor-bindings = <&history_encoder>;
+            sensor-bindings = <&history_encoder &history_encoder>;
         };
 
         ARROW_NUM {
@@ -235,7 +235,7 @@
             &mt LSHIFT LC(Z)    &kp LC(X)    &kp LC(C)    &kp LC(V)                               &kp SEMICOLON    &kp DEL      &kp N1    &kp N2    &kp N3    &kp N0
                                              &trans       &trans       &trans       &trans        &trans           &trans       &trans
             >;
-            sensor-bindings = <&inc_dec_kp LC(PLUS) LC(MINUS) &inc_dec_kp LC(PLUS) LC(MINUS)>;
+            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(PLUS) &inc_dec_kp LC(MINUS) LC(PLUS)>;
         };
 
         SYMBOL {
@@ -245,7 +245,7 @@
             &trans       &trans       &kp PIPE    &kp BSLH                               &kp K_APP    &kp DEL      &kp SQT      &kp DQT      &kp LBRC    &kp RBRC
                                       &trans       &trans     &trans       &trans        &trans       &trans       &trans
             >;
-            sensor-bindings = <&inc_dec_kp LS(LC(LT)) LS(LC(GT)) &inc_dec_kp LS(LC(LT)) LS(LC(GT))>;
+            sensor-bindings = <&inc_dec_kp LS(LC(GT)) LS(LC(LT)) &inc_dec_kp LS(LC(GT)) LS(LC(LT))>;
         };
 
         FUNCTION {
@@ -255,7 +255,7 @@
             &kp PAUSE_BREAK    &kp SLCK    &kp PSCRN    &kp INS                  &trans    &kp DEL       &kp F1    &kp F2    &kp F3    &kp F10
                                            &trans       &trans     &trans        &trans    &trans        &trans    &trans
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         MOUSE {
